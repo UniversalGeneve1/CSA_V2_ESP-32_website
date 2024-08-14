@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+        <title>Chat Sentiment Analysis V0.0</title>
+    </head>
+
+    <script>
+        document.getElementById('nameForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            const name = document.getElementById('channel_name').value.trim(); // Get the name from the input field and trim whitespace
+            const encodedName = encodeURIComponent(name); // Encode the name to handle special characters
+            window.location.href = `https://www.website.com/${encodedName}`; // Redirect to the new URL
+
+        });
+    </script>
+
+    <body style="background-color: lavender; display: flex; justify-content: center; align-items: center; flex-direction: column; margin: auto;">
+        <div style="display: flex; justify-content: center; align-items: center; text-align: center; margin: auto; height: 100vh; width: 100vw;">
+            <div style="display: flex; justify-content: center; align-items: center; border:7px solid purple; border-radius: 20px; flex-direction: column; width: 33%; margin: auto;">
+                <div>
+                    <h1 style="text-align: center; font-family: 'Questrial';">
+                        TWITCH CHAT SENTIMENT ANALYSIS TOOL
+                    </h1>
+                </div>
+                <div>
+                    <p style="text-align: center; font-family: 'Questrial';">
+                        This is an analytics tool designed to generate insights from a streamer's viewer chat logs.<br>Use this to determine the interests and dislikes of a streamer's community<br><br>
+                    </p>
+                </div>
+                <div>
+                    <form id="streamer-name" style="text-align: center;">
+                        <label for="streamer"></label><br>
+                        <input type="text" id="channel_name" name="channel_name"><br>
+                        <input type="submit" value="Submit"><br><br> <!-- when clicked, serve the streamer's data page -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
